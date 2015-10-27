@@ -1,0 +1,46 @@
+﻿<Window x:Name="mainWindow" x:Class="WorkshopPub.MainWindow" 
+        Background="#e9e9e9"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        BorderBrush="AliceBlue"
+        Title="[G]Workshop" Height="400" Width="600" Visibility="Visible" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid x:Name="baseGrid">
+        <Grid Background ="#1194f0" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="600">
+            <TextBlock TextWrapping="Wrap" x:Name="headerName" Text="[G]Workshop" Foreground="#FFE9E9E9" FontSize="26.667" Margin="207,-4,208,4" FontFamily="Segoe UI Black"/>
+            <Button x:Name="mainCloseButton" Content="X" BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Background ="#E84C3D" HorizontalAlignment="Left" Margin="565,0,0,0" VerticalAlignment="Top" Width="35" Height="35" FontFamily="Segoe UI Black" FontSize="24" BorderBrush="{x:Null}" Foreground="#FFE9E9E9" Click="closeButton_Click_1" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch" Padding="0" Grid.IsSharedSizeScope="True"/>
+        </Grid>
+        <TabControl x:Name="mainTabBase" HorizontalAlignment="Left" Height="369" Margin="0,32,0,-1" VerticalAlignment="Top" Width="600" BorderBrush="{x:Null}">
+            <TabItem Header="AddonFolder" IsSelected="True" Visibility="Collapsed">
+                <Grid Margin="10,0,0,47">
+                    <TextBlock x:Name="addonFolderInstructions" TextWrapping="Wrap" Text="The first step is to select your addon folder, this is the only time we'll need you to select a folder." Margin="190,70,114,178" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Image x:Name="folderImage" HorizontalAlignment="Left" Margin="114,67,0,0" VerticalAlignment="Top" Width="64" Height="64" Source="pack://siteoforigin:,,,/Resources/folder.png"/>
+
+                    <TextBox x:Name="selectAddonFolderTextBox" Height="22" TextChanged="selectAddonFolderTextBox_TextChanged" TextWrapping="Wrap" Text="Select Addon Folder" Margin="114,165,169,0" VerticalAlignment="Top" PreviewMouseDown="selectAddonFolderTextBox_PreviewMouseDown"/>
+                    <Button x:Name="selectRootFolderButton" Content="Browse..." Margin="416,141 ,90,103" Width="74" Height="22" Click="selectRootFolderButton_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="jsonDetails" Visibility="Collapsed">
+                <Grid Margin="10,0,0,47">
+                    <TextBlock x:Name="jsonInstructions" TextWrapping="Wrap" Text="Now we need some details to create the .json for the addon, more specifically the name, the type, the tags and the file extensions to ignore." Margin="192,0,114,219" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Image x:Name="jsonImage" HorizontalAlignment="Left" Margin="122,10,0,0" VerticalAlignment="Top" Width="64" Height="64" Source="pack://siteoforigin:,,,/Resources/file.png"/>
+
+                    <TextBox x:Name="addonNameTextbox" Height="23" TextWrapping="Wrap" Text="Addon Name" Margin="177,58,177,139" PreviewMouseDown="addonNameTextbox_PreviewMouseDown"/>
+                    <ComboBox x:Name="addonTypeComboBox" Margin="177,136,177,0" VerticalAlignment="Top"/>
+                    <ListBox x:Name="addonTagsList" Height="100" Margin="177,126,177,0" SelectionMode="Multiple" IsSynchronizedWithCurrentItem="True" SelectionChanged="addonTagsList_SelectionChanged"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="addonImage" Visibility="Collapsed">
+                <Grid Margin="10,0,0,47">
+                    <TextBlock x:Name="addonImageInstruction" TextWrapping="Wrap" Text="Now we're at the final step. We just need you to select the image that you're going to be using for the workshop page. It needs to be a .jpg and 512x512." Margin="190,70,114,178" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Image x:Name="addonImageImage" HorizontalAlignment="Left" Margin="114,67,0,0" VerticalAlignment="Top" Width="64" Height="64" Source="pack://siteoforigin:,,,/Resources/image.png"/>
+
+                    <TextBox x:Name="selectAddonImageBox" Height="22" TextWrapping="Wrap" Text="Select Addon Image" Margin="114,165,169,0" VerticalAlignment="Top" PreviewMouseDown="selectAddonImageBox_PreviewMouseDown"/>
+                    <Button x:Name="addonimagebrowsebutton" Content="Browse..." Margin="416,141,90,103" Width="74" Height="22" Click="addonimagebrowsebutton_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <Button x:Name="nextButton" Content="Next" HorizontalAlignment="Left" Height="32" Margin="490,358,0,0" VerticalAlignment="Top" Width="100" Click="nextButton_Click"/>
+        <Button x:Name="previousButton" Content="Previous" HorizontalAlignment="Left" Height="32" Margin="10,358,0,0" VerticalAlignment="Top" Width="100" IsEnabled="False" Click="previousButton_Click"/>
+    </Grid>
+</Window>
