@@ -6,7 +6,7 @@ What this program does is grab all the information that the client has to enter,
 into a .gma, and then publishes said .gma onto the Workshop.
 
 # Download
-[Download Here](https://github.com/Nookyava/G-Workshop/releases/tag/1.0, "Release") the latest version.
+Download the latest version [here](https://github.com/Nookyava/G-Workshop/releases/tag/1.0 "Release").
 
 # Things to note
 * The current version does not include file ignoring, so make sure anything you want to upload is removed from the folder.
